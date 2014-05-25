@@ -3,9 +3,9 @@ Hello World - with and without Spring
 
 Refer "App.java" and "app-container.xml" files in below examples.
 
-[Example 1 - Simple Greeting service to say hello] ()
+[Example 1 - Simple Greeting service to say hello] (https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-core/src/main/java/com/tirthal/learning/helloworld/greeting)
 
-[Example 2 - Output Generator in formats like JSON, XML...] ()
+[Example 2 - Output Generator in formats like JSON, XML...] (https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-core/src/main/java/com/tirthal/learning/helloworld/outputgenerator)
 
 
 What are two types of IOC container in Spring?

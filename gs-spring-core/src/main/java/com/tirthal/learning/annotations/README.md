@@ -3,9 +3,9 @@ Minimizing XML configuration using Annotations
 
 * Autowiring a step further by letting Spring figure out which classes should be configured as Spring beans, reducing the need for the <bean> element.
 
-[Understand by code snippet - demo of @Autowired, @Qualifier, @Component, @PostConstruct, @PreDestroy] ()
+[Understand by code snippet - demo of @Autowired, @Qualifier, @Component, @PostConstruct, @PreDestroy] (https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-core/src/main/java/com/tirthal/learning/annotations/outputgenerator)
 
-[Understand by code snippet - demo of Spring's @Value and SpEL] ()
+[Understand by code snippet - demo of Spring's @Value and SpEL] (https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-core/src/main/java/com/tirthal/learning/annotations/spel)
 
 
 Spring Annotations Fundamentals (notes taken from Spring in Action book)
