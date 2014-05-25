@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	
+	<!-- See AppWithSpring.java to understand how Spring bean wiring offers the loosely coupled design -->
+	<!-- Spring IOC container would be responsible to instantiate objects of classes and those can be accessed using "id" -->
+	<!-- For example - Spring's appContext.getBean("message", Message.class) would return instance of "Message" class in "AppWithSpring.java" -->
+	
+	<!-- Beans wiring -->
+	
+	<bean id="message" class="com.tirthal.learning.helloworld.greeting.Message">
+		<!-- Injecting through constructor - name attribute values must match with the instance variable names of Message class -->
+		<constructor-arg name="title" value="Spring Demo"></constructor-arg>
+		<constructor-arg name="description" value="This is Spring Hello World demo"></constructor-arg>
+	</bean>
+	
+	<!-- By default scope is singleton -->
+	<bean id="greetingService" class="com.tirthal.learning.helloworld.greeting.GreetingServiceImpl" />
+
+	<!-- Let's try prototype scope, which means a new instance per request -->
+	<bean id="greetingServicePrototype" class="com.tirthal.learning.helloworld.greeting.GreetingServiceImpl" scope="prototype" />
+
+</beans>

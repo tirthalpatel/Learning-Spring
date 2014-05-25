@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- CREATING BEANS THROUGH FACTORY METHODS + INSTANTIATE AND DESTROY METHOD CALL -->
+	<bean id="stage" class="com.tirthal.learning.xmlconfig.beanwiring.Stage" factory-method="getInstance" init-method="prepareStage" destroy-method="closedToPerform"></bean>
+	
+	<!-- INSTANTIATING BEAN OBJECT USING DEFAULT CONSTRUCTOR OF THE CLASS -->
+	<bean id="jugglerOne" class="com.tirthal.learning.xmlconfig.beanwiring.Juggler"></bean>
+	<bean id="sonnet29" class="com.tirthal.learning.xmlconfig.beanwiring.Sonnet29"></bean>
+	
+	<!-- SETTING PRIMITIVE VALUE WITH CONSTRUCTOR -->
+	<bean id="jugglerTwo" class="com.tirthal.learning.xmlconfig.beanwiring.Juggler">
+		<constructor-arg value="10"></constructor-arg>
+	</bean>
+
+	<!-- INJECTING OBJECT REFERENCES WITH CONSTRUCTORS -->
+	<bean id="poeticJuggler" class="com.tirthal.learning.xmlconfig.beanwiring.PoeticJuggler">
+		<constructor-arg value="15"></constructor-arg>
+		<constructor-arg ref="sonnet29"></constructor-arg>
+	</bean>
+	
+	<!-- BEANS SCOPING [By default singleton scope would issue the same ticket instance] -->
+	<bean id="ticket" class="com.tirthal.learning.xmlconfig.beanwiring.Ticket" scope="prototype"></bean>
+	
+	<!-- INJECTING INTO BEAN PROPERTIES -->
+	<bean id="saxophone" class="com.tirthal.learning.xmlconfig.beanwiring.Saxophone"></bean>
+	<bean id="piano" class="com.tirthal.learning.xmlconfig.beanwiring.Piano"></bean>
+	
+	<bean id="kenny" class="com.tirthal.learning.xmlconfig.beanwiring.Instrumentalist">
+		<property name="song" value="Jingle Bells"></property>
+		<property name="instrument" ref="saxophone"></property>
+	</bean>
+	<bean id="benny-playing-piano" class="com.tirthal.learning.xmlconfig.beanwiring.Instrumentalist">
+		<property name="song" value="Jingle Bells"></property>
+		<property name="instrument" ref="piano"></property>
+	</bean>	
+	
+	<!-- Injecting inner beans (class) -->
+	<bean id="benny-playing-saxophone" class="com.tirthal.learning.xmlconfig.beanwiring.Instrumentalist">
+		<property name="song" value="Jingle Bells"></property>
+		<property name="instrument">			
+			<bean class="com.tirthal.learning.xmlconfig.beanwiring.Saxophone"></bean>
+		</property>
+	</bean>	
+	
+	<!-- Wiring properties with Spring’s p namespace -->
+	<bean id="benny-playing-saxophone-alternate" class="com.tirthal.learning.xmlconfig.beanwiring.Instrumentalist" p:song="Jingle Bells" p:instrument-ref="saxophone"></bean>
+	
+	<!-- Wiring Collections -->
+	<bean id="hank-having-duplication" class="com.tirthal.learning.xmlconfig.beanwiring.OneManBand">
+		<property name="instruments">
+			<!-- list allows duplication -->
+			<list>
+				<ref bean="saxophone"/>
+				<ref bean="piano"/>
+				<ref bean="piano"/>				
+			</list>
+		</property>
+	</bean>	
+	<bean id="hank-without-duplication" class="com.tirthal.learning.xmlconfig.beanwiring.OneManBand">
+		<property name="instruments">
+			<!-- set ensures no duplication -->
+			<set>
+				<ref bean="saxophone"/>
+				<ref bean="piano"/>
+				<ref bean="piano"/>				
+			</set>
+		</property>
+	</bean>
+	<bean id="hank-with-instruments-map" class="com.tirthal.learning.xmlconfig.beanwiring.OneManBandMap">
+		<property name="instruments">
+			<!-- map can be used to store name-value pairs where name and value can be of any type -->
+			<map>
+				<entry key="SAXOPHONE" value-ref="saxophone"></entry>
+				<entry key="PIANO" value-ref="piano"></entry>		
+			</map>
+		</property>
+	</bean>	
+	<bean id="hank-with-instruments-props" class="com.tirthal.learning.xmlconfig.beanwiring.OneManBandProperties">
+		<property name="instruments">
+			<!-- map can be used to store  name-value pairs where the name and value are both Strings -->
+			<props>
+				<prop key="GUITAR">STRUM STRUM STRUM</prop>
+				<prop key="CYMBAL">CRASH CRASH CRASH</prop>
+				<prop key="HARMONICA">HUM HUM HUM</prop>				
+			</props>			
+		</property>
+	</bean>			
+</beans>
