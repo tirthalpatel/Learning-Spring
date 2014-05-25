@@ -44,5 +44,5 @@ Odds and ends
 
 Also Refer
 ------------	
-	* [Spring In Action] (http://www.manning.com/walls2/)
-	* [Spring Tutorials @ TutorialsPoint] (http://www.tutorialspoint.com/spring/)
+* [Spring In Action] (http://www.manning.com/walls2/)
+* [Spring Tutorials @ TutorialsPoint] (http://www.tutorialspoint.com/spring/)
