@@ -10,8 +10,7 @@ Skip steps of creating new project, instead use this project directly for quick 
 	- Java 7
 	- Maven
 	- Spring Tool Suite (STS) / Eclipse (preferably with Spring plugins installed)
-* Just import project in STS and switch to Spring perspective. 
-* Fix build path errors, such as JRE configuration. That's it.
+* Just import project in STS and switch to Spring perspective. Fix build path errors, such as JRE configuration. That's it.
 
 * Run "App.java" files in different packages, which contain main() method as a start point of demo code in each packages. Refer corresponding Spring configuration and play with the code to learn.
 
