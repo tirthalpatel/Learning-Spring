@@ -45,3 +45,8 @@ Also Refer
 ------------	
 * [Spring In Action] (http://www.manning.com/walls2/)
 * [Spring Tutorials @ TutorialsPoint] (http://www.tutorialspoint.com/spring/)
+
+
+Disclaimer
+----------
+The code snippet are mainly targeted for learning purpose, and not focused for producing production code quality.
