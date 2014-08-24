@@ -15,4 +15,4 @@ Spring MVC
 
 Spring Boot
 -----------
-[gs-spring-boot] (https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-boot) - Getting started with Spring Boot and Gradle for building Spring application.
+TODO - Getting started with Spring Boot and Gradle for building Spring application.
