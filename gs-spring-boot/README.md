@@ -11,8 +11,8 @@ Getting started (gs) with Spring Boot projects.
 ## Sample Spring Boot App
 
 * [gs-spring-boot-app](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-boot/gs-spring-boot-app) - Sample POC code snippet for getting started with Spring Boot Application (manually created maven based project)
-* [gs-spring-boot-maven-skeleton](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-boot/gs-spring-boot-maven) - Maven Based Spring Boot Project Skeleton (created using Spring Initializer)
-* [gs-spring-boot-gradle-skeleton](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-boot/gs-spring-boot-gradle) - Gradle Based Spring Boot Project Skeleton (created using Spring Initializer)
+* [gs-spring-boot-maven-skeleton](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-boot/gs-spring-boot-maven-skeleton) - Maven Based Spring Boot Project Skeleton (created using Spring Initializer)
+* [gs-spring-boot-gradle-skeleton](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-boot/gs-spring-boot-gradle-skeleton) - Gradle Based Spring Boot Project Skeleton (created using Spring Initializer)
 	
 ## Known Issues
 
