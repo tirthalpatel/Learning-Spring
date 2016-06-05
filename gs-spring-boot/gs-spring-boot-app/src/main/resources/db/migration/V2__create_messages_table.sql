@@ -1,0 +1,4 @@
+CREATE TABLE MESSAGES (
+	ID INT AUTO_INCREMENT,
+   	title VARCHAR(255),
+   	description VARCHAR(1000));

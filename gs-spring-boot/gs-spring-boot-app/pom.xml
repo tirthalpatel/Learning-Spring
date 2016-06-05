@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.tirthal.learning</groupId>
+  <artifactId>gs-spring-boot-app</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  
+  <!-- Start: Add Spring Boot Starter Parent -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.3.5.RELEASE</version>
+  </parent>
+  <!-- End: Add Spring Boot Starter Parent -->
+
+  <name>gs-spring-boot-app</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <start-class>com.tirthal.learning.App</start-class>
+    <springfox.swagger.version>2.2.2</springfox.swagger.version>
+    <hawt.version>1.4.65</hawt.version>
+  </properties>
+
+  <dependencies>
+  	<!-- Start: Add Springfox Swagger libraries -->
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+        <version>${springfox.swagger.version}</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+        <version>${springfox.swagger.version}</version>
+        <scope>compile</scope>
+    </dependency>
+    <!-- End: Add Springfox Swagger libraries -->
+    
+    <!-- Start: Inform Spring Boot to auto-configure Spring MVC for us -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- End: Inform Spring Boot to auto-configure Spring MVC for us -->
+    
+    <!-- Start: Inform Spring Boot to auto-configure Spring Data JPA, H2 database and FlywayDB dependencies -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-core</artifactId>
+    </dependency>
+    <!-- End: Inform Spring Boot to auto-configure Spring Data JPA, H2 database and FlywayDB dependencies -->
+    
+    <!-- Start: Inform Spring Boot to enable Production-ready features like application health information -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <!-- End: Inform Spring Boot to enable Production-ready features like application health information -->
+    
+    <!-- Start: Hawtio dependency - a lightweight web console to monitor and manage application -->
+		<dependency>
+			<groupId>io.hawt</groupId>
+			<artifactId>hawtio-springboot</artifactId>
+			<version>${hawt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.hawt</groupId>
+			<artifactId>hawtio-core</artifactId>
+			<version>${hawt.version}</version>
+		</dependency>
+    <!-- End: Hawtio dependency - a lightweight web console to monitor and manage application -->
+    
+    <!-- Start: Inform Spring Boot to auto-configure testing frameworks dependencies -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <!-- End: Inform Spring Boot to auto-configure testing frameworks dependencies -->        
+    
+  </dependencies>
+</project>
