@@ -2,7 +2,7 @@
 
 ## Spring Boot
 
-* [gs-spring-boot](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-boot/gs-spring-boot) - Spring Boot Project Skeleton + POC for getting started with Spring Boot Application
+* [gs-spring-boot](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-boot) - Spring Boot Project Skeleton + POC for getting started with Spring Boot Application
 
 ## Core Spring
 
