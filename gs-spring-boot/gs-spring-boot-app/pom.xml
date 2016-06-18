@@ -84,13 +84,20 @@
 		</dependency>
     <!-- End: Hawtio dependency - a lightweight web console to monitor and manage application -->
     
+    <!-- Start: Inform Spring Boot to enable Development tools for automatic restart, livereload support, setting default development properties, etc. -->
+    <dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-devtools</artifactId>
+	</dependency>
+    <!-- End: Inform Spring Boot to enable Development tools for automatic restart, livereload support, setting default development properties, etc. -->
+    
     <!-- Start: Inform Spring Boot to auto-configure testing frameworks dependencies -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-test</artifactId>
         <scope>test</scope>
     </dependency>
-    <!-- End: Inform Spring Boot to auto-configure testing frameworks dependencies -->        
+    <!-- End: Inform Spring Boot to auto-configure testing frameworks dependencies -->    
     
   </dependencies>
 </project>

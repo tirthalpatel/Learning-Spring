@@ -86,15 +86,17 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 	
 ### Spring Boot + Properties customization
 	
-* Create application.properties and setup environment profiles (i.e. application-test.properties, application-prod.properties) to customize embedded container port or logging level or any other Spring Boot provided configuration.		
+* Create application.properties and setup environment profiles (i.e. application-test.properties, application-prod.properties) to customize embedded container port or logging level or any other Spring Boot provided configuration [see](http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html).		
 
 * How to run application with environment specific profiles (to load "application-<env>.properties" configuration over "application.properties" file)?
 	* STS - Run Configurations - Java Application - App - Add VM Arguments : "-Dspring.profiles.active=prod".	
 	* Alternatively, run "mvn spring-boot:run -Dspring.profiles.active=prod" maven command on command prompt. 
 
-### Spring Boot + Spring Data JPA + H2 Database + FlywayDB
+### Spring Boot + Spring Data JPA + H2 Database + FlywayDB 
 
-* 	Add Spring Data JPA, H2 database and FlywayDB dependencies in pom.xml
+* For enabling database migration, Liquibase is also supported by Spring Boot as an alternative of FlywayDB.
+
+* Add Spring Data JPA, H2 database and FlywayDB dependencies in pom.xml
 
 		<dependency>
 	        <groupId>org.springframework.boot</groupId>
@@ -109,7 +111,7 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 	        <artifactId>flyway-core</artifactId>
 	    </dependency>
 
-* application.properties - Configure Spring Boot provided h2, datasource, flyway and jpa properties
+* application.properties - Configure Spring Boot provided h2, datasource, flyway and jpa properties.
 
 * Created "db\migration\" folder underneath resources folder to keep FlywayDB migration SQL scripts.
 
@@ -134,7 +136,7 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 
 ### Spring Boot + Hawtio (a lightweight web console to monitor and manage application)
 
-* Add Spring Boot Actuator dependency in pom.xml (it internally expects that "spring-boot-starter-actuator" is added too)
+* Add Hawtio dependencies in pom.xml (it internally expects that "spring-boot-starter-actuator" is added too)
 
 		<dependency>
 			<groupId>io.hawt</groupId>
@@ -150,6 +152,23 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 * Created HawtioConfig.java to enable Hawtio.
 
 * This enables to use Hawtio web console via browser: localhost:8080/hawtio/index.html
+
+### Spring Boot + Developer Tools (for automatic restart, livereload support, etc.)
+
+* Add Spring Boot Developer Tools dependencies in pom.xml
+
+	    <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
+* This offers following capabilities:
+	- Automatic restart: Restarts a running application when files are changed in the classpath
+	- LiveReload support: Changes to resources trigger a browser refresh automatically (Need to install the LiveReload plugin into web browser to use this feature)
+	- Remote development: Supports automatic restart and LiveReload when deployed remotely
+	- Development property defaults: Provides sensible development defaults for some configuration properties
+
+* The developer tools will be disabled when your application is running from a fully packaged JAR or WAR file, so it’s unnecessary to remove this dependency before building a production deployment.
 
 ### Spring Boot + Testing (JUnit, Hemcrest, Mockito, Spring Test) 
 
