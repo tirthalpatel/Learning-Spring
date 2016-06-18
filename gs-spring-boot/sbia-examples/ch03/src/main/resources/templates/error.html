@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Oops!</title>
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
+  </head>
+
+  <html>
+    <div class="errorPage">
+      <span class="oops">Oops!</span><br/>
+      <img th:src="@{/MissingPage.png}"></img>
+      <p th:text="${customErrorMsg + ' : ' + path}"></p>                     
+      <p th:text="${'Details: ' + message}"></p>
+    </div>
+  </html>
+
+</html>
