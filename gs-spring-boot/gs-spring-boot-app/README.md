@@ -179,6 +179,8 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
         <artifactId>spring-boot-starter-test</artifactId>
         <scope>test</scope>
     </dependency>
+
+* Created application-test.properties file.
     
 * Created few unit tests. 
 	- HelloControllerTest.java for JUnit and Hamcrest demo.
@@ -187,5 +189,5 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 	- MessageControllerWebIntegrationTest.java for Controller to Repository integration demo using Spring Test.  
 
 * How to run test cases?
-	- STS: select project or junit package or test class, right click and run as "JUnit tests" / "Maven test"		
-	- Alternatively, run maven command from root of project: "mvn test"
+	- STS: select project or junit package or test class, right click and run as "JUnit tests" / "Maven test" by passing "-Dspring.profiles.active=test" in VM arguments		
+	- Alternatively, run maven command from root of project: "mvn test -Dspring.profiles.active=test"

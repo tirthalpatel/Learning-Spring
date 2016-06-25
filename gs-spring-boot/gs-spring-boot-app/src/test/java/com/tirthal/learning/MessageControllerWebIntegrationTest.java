@@ -7,9 +7,11 @@ import java.io.IOException;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.TestRestTemplate;
 import org.springframework.boot.test.WebIntegrationTest;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -24,12 +26,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @WebIntegrationTest
 public class MessageControllerWebIntegrationTest {
 
+	@Autowired
+	Environment env;
+	
 	@Test
 	public void getAllMessages() throws JsonProcessingException, IOException {
 		RestTemplate restTemplate = new TestRestTemplate();
 		
-		// TODO: Below url should be configurable in application.properties
-		ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8080/messages", String.class);
+		// Did you run test with "-Dspring.profiles.active=test" for using application-test.properties?
+		ResponseEntity<String> response = restTemplate.getForEntity(env.getProperty("app.rest.endpoint.base")+"messages", String.class);
 		
 		assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
 		
