@@ -10,6 +10,8 @@
 
 * [gs-spring-data-rest](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-data-rest) - Sample code snippet for getting hands dirty with Spring Data REST (Maven based project structure using Spring Boot). 
 
+* Credit: [Spring Data Repositories - A Deep Dive](https://github.com/olivergierke/repositories-deepdive), [Spring Data Examples](https://github.com/spring-projects/spring-data-examples), [Spring Data Book Source](https://github.com/spring-projects/spring-data-book)
+
 ## Core Spring
 
 * [gs-spring-core](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-core) - Sample code snippet for getting started with Core Spring (Maven based project structure).
