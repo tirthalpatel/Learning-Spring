@@ -14,23 +14,19 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.tirthal.learning.Main;
 import com.tirthal.learning.model.Manufacturer;
-import com.tirthal.learning.repository.ManufacturerJpaRepository;
-import com.tirthal.learning.repository.ManufacturerRepository;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Main.class)
 @WebAppConfiguration
 public class ManufacturerPersistenceTests {
-	@Autowired
-	private ManufacturerRepository manufacturerRepository;
 
 	@Autowired
 	private ManufacturerJpaRepository manufacturerJpaRepository;
 
 	@Test
 	public void testGetManufacturersFoundedBeforeDate() throws Exception {
-		List<Manufacturer> mans = manufacturerRepository.getManufacturersFoundedBeforeDate(new Date());
+		List<Manufacturer> mans = manufacturerJpaRepository.findByFoundedDateBefore(new Date());
 		assertEquals(2, mans.size());
 	}
 
@@ -45,13 +41,13 @@ public class ManufacturerPersistenceTests {
 
 	@Test
 	public void testGetManufactureByName() throws Exception {
-		Manufacturer m = manufacturerRepository.getManufacturerByName("Fender");
+		Manufacturer m = manufacturerJpaRepository.findByNameLike("Fender%");
 		assertEquals("Fender Musical Instruments Corporation", m.getName());
 	}
 
 	@Test
 	public void testGetManufacturersThatSellModelsOfType() throws Exception {
-		List<Manufacturer> mans = manufacturerRepository.getManufacturersThatSellModelsOfType("Semi-Hollow Body Electric");
+		List<Manufacturer> mans = manufacturerJpaRepository.getAllThatSellAcoustics("Semi-Hollow Body Electric");
 		assertEquals(1, mans.size());
 	}
 }

@@ -20,4 +20,6 @@ public interface ManufacturerJpaRepository extends JpaRepository<Manufacturer, L
 	
 	@Query(name="Manufacturer.getAllThatSellAcoustics", nativeQuery=true)
 	List<Manufacturer> getAllThatSellAcoustics(String name);
+	
+	Manufacturer findByNameLike(String name);
 }

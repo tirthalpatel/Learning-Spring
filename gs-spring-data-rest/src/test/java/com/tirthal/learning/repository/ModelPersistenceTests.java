@@ -16,22 +16,21 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tirthal.learning.Main;
 import com.tirthal.learning.model.Model;
-import com.tirthal.learning.repository.ModelJpaRepository;
-import com.tirthal.learning.repository.ModelRepository;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Main.class)
 @WebAppConfiguration
 public class ModelPersistenceTests {
-	@Autowired
-	private ModelRepository modelRepository;
 
 	@Autowired
 	private ModelJpaRepository modelJpaRepository;
@@ -48,37 +47,39 @@ public class ModelPersistenceTests {
 		m.setPrice(BigDecimal.valueOf(55L));
 		m.setWoodType("Maple");
 		m.setYearFirstMade(new Date());
-		m = modelRepository.create(m);
+		m = modelJpaRepository.save(m);
 		
 		// clear the persistence context so we don't return the previously cached location object
 		// this is a test only thing and normally doesn't need to be done in prod code
 		entityManager.clear();
 
-		Model otherModel = modelRepository.find(m.getId());
+		Model otherModel = modelJpaRepository.findOne(m.getId());
 		assertEquals("Test Model", otherModel.getName());
 		assertEquals(10, otherModel.getFrets());
 		
 		//delete BC location now
-		modelRepository.delete(otherModel);
+		modelJpaRepository.delete(otherModel);
 		
 		modelJpaRepository.aCustomMethod();
 	}
 
 	@Test
 	public void testGetModelsInPriceRange() throws Exception {
-		List<Model> mods = modelRepository.getModelsInPriceRange(BigDecimal.valueOf(1000L), BigDecimal.valueOf(2000L));
+		List<Model> mods = modelJpaRepository.findByPriceGreaterThanEqualAndPriceLessThanEqual(BigDecimal.valueOf(1000L), BigDecimal.valueOf(2000L));
 		assertEquals(4, mods.size());
 	}
 
 	@Test
 	public void testGetModelsByPriceRangeAndWoodType() throws Exception {
-		Page<Model> mods = modelRepository.getModelsByPriceRangeAndWoodType(BigDecimal.valueOf(1000L), BigDecimal.valueOf(2000L), "Maple");
+		Sort sort = new Sort(Sort.Direction.DESC, "name");
+		Pageable page = new PageRequest(0, 2, sort);
+		Page<Model> mods = modelJpaRepository.queryByPriceRangeAndWoodType(BigDecimal.valueOf(1000L), BigDecimal.valueOf(2000L), "Maple", page);
 		assertEquals(2, mods.getSize());
 	}
 
 	@Test
 	public void testGetModelsByType() throws Exception {
-		List<Model> mods = modelRepository.getModelsByType("Electric");
+		List<Model> mods = modelJpaRepository.findAllModelsByType("Electric");
 		assertEquals(4, mods.size());
 	}
 
