@@ -1,6 +1,8 @@
 # Cloud Config Server
 
-Demo project for Spring Cloud Config Server (which offers central management for configuration via a git or svn backend).
+Demo project for Spring Cloud Config Server (which offers central management for configuration via a git or svn backend). 
+
+The Server provides an HTTP, resource-based API for external configuration (name-value pairs, or equivalent YAML content). The server is easily embeddable in a Spring Boot application using the @EnableConfigServer annotation. 
 
 ## Pre-requisites
 

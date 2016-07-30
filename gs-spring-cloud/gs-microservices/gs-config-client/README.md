@@ -2,6 +2,8 @@
 
 Demo project for Spring Cloud Config Client to use features of Cloud Config Server.
 
+A Spring Boot application can take immediate advantage of the Spring Config Server (or other external property sources provided by the application developer).
+
 ## Pre-requisites
 
 * [Parent README.md](../README.md)
