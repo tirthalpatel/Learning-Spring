@@ -2,10 +2,6 @@
 
 Numerous projects for getting my hands dirty with Spring IO technology stack.
 
-## Spring way of Monolithic App POC
-
-*[poc-monolithic-app](https://github.com/tirthalpatel/Learning-Spring/tree/master/poc-monolithic-app) - A step-by-step POC project for building Spring way of Monolithic App (Maven + Spring Boot + Spring Web and REST + Spring Data JPA + Spring Data REST + ...). 
-
 ## Spring Cloud
 
 * [gs-microservices](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-cloud/gs-microservices) - POC for getting started with Microservice based self-healing distributed systems using Spring Cloud.
