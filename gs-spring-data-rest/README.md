@@ -17,21 +17,22 @@ To run this project locally, perform the following steps.
 * Import "gs-spring-data-rest" project in STS using an existing maven project and switch to Spring perspective. Fix build path errors, such as JRE configuration, in case exists.
 * Run the JUnit tests in the src/test/java folder.  If all pass you are good to go.
 * Next try running the app as a Spring Boot app.  You can do this by running the Main.java file in this project as a standard java project or you can run spring boot at your project's root with Maven using the following command: 'mvn spring-boot:run'
-* Using any REST client tool (e.g. Postman), see exposed REST APIs starting point @ [http://localhost:8080/api](http://localhost:8080/api). Try GET, POST, PUT, PATCH and DELETE. For example,
+* Play with exposed REST APIs using Spring Data REST HAL Browser Tool @ [http://localhost:8080/api](http://localhost:8080/api). Try GET, POST, PUT, PATCH and DELETE. For example,
 	- GET: /api/modelTypes
 	- POST: /api/modelTypes
 	- GET: /api/modelTypes/{id}
 	- PUT: /api/modelTypes/{id}
 	- PATCH: /api/modelTypes/{id}
 	- DELETE: /api/modelTypes/{id}	
+* Alternatively, one may use any choice of REST client tool such as Postman.
 
 ## Key Notes
 
 * When every time Spring Boot project starts, for unit testing purpose, the project is configured to delete all data and create sample data from "data.sql".
 * How to install Spring Data REST in the Spring Boot project? 
-	- pom.xml: Need to add "spring-boot-starter-data-rest" dependency	
+	- pom.xml: Need to add "spring-boot-starter-data-rest" dependency + Optionally enable HAL browser by adding "spring-data-rest-hal-browser" dependency
 * How to customize default URI of services?
-	- application.properties: Configure "spring.data.rest.baseUri"
+	- application.properties: Configure "spring.data.rest.basePath"
 	- Use @RepositoryRestResource, to customize parameters of given service. For example, see @RepositoryRestResource in ManufacturerJpaRepository.java, which changes default "http://localhost:8080/manufacturers" service url to the customized "http://localhost:8080/api/mfgs" URL
 	- Disable given service using @RepositoryRestResource(exported=false). For example, see in LocationJpaRepository.java, which returns 404 when accessing "http://localhost:8080/api/locations"
 * How to customize REST Payloads?
