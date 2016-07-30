@@ -89,7 +89,7 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 * Create application.properties and setup environment profiles (i.e. application-test.properties, application-prod.properties) to customize embedded container port or logging level or any other Spring Boot provided configuration [see](http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html).		
 
 * How to run application with environment specific profiles (to load "application-<env>.properties" configuration over "application.properties" file)?
-	* STS - Run Configurations - Java Application - App - Add VM Arguments : "-Dspring.profiles.active=prod".	
+	* STS - Run Configurations - Java Application - App - Add VM Arguments : "-Dspring.profiles.active=prod". For example, production configuration not showing default Spring banner on application startup.	
 	* Alternatively, run "mvn spring-boot:run -Dspring.profiles.active=prod" maven command on command prompt. 
 
 ### Spring Boot + Spring Data JPA + H2 Database + FlywayDB 
