@@ -11,8 +11,9 @@ Demo project for Spring Cloud Netflix Eureka server. The server can be configure
 ## Key Notes
 
 1. Created project using SPRING INITIALIZR. Select 'Config Client' and 'Eureka Server' dependencies.
-2. Added property files in 'gs-config-repo' folder: 'gs-discovery-eureka-server.properties' + Peer aware eureka servers profile ('gs-discovery-eureka-server.properties', 'gs-discovery-eureka-server.properties')
-3. Started the application and status could be validated using `http://localhost:8761/admin/info` / `http://localhost:8761/admin/health` url.
+2. Added property files in 'gs-config-repo' folder: 'gs-discovery-eureka-server.properties' + Peer aware eureka servers profile ('gs-discovery-eureka-server-peer1.properties', 'gs-discovery-eureka-server-peer2.properties')
+3. Added 'bootstrap.properties' in project resources to locate config server.
+4. Started the application and status could be validated using `http://localhost:8761/admin/info` / `http://localhost:8761/admin/health` url.
 
 ### Try
 
