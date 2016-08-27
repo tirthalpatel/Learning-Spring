@@ -1,0 +1,35 @@
+body {
+	background-color: #cccccc;
+	font-family: arial,helvetica,sans-serif;
+}
+
+.heading {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.content {
+	font-size: 10pt;
+	font-weight: normal;
+}
+
+.delete {
+	font-size: 10pt;
+	font-weight: normal;
+}
+
+label {
+	font-weight: bold;
+}
+
+.error {
+	color: red;
+}
+
+.errorPage {
+  text-align:center;	
+}
+
+.button {
+	color: blue;
+}

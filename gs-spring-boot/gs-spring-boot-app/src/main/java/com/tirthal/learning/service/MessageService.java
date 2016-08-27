@@ -11,7 +11,7 @@ import com.tirthal.learning.repository.MessageRepository;
 @Service
 public class MessageService {
 	
-	@Autowired
+	@Autowired(required=false)
 	private MessageRepository messageRepository;	
 	
 	public List<Message> findAllMessage() {			

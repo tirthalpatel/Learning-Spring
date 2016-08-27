@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Oops!</title>
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
+  </head>
+
+  <body>
+    <div class="errorPage">      
+      <img th:src="@{/oops.png}"></img>
+      <p class="error" th:text="${'Error = ' + status + ' : ' + error}"></p>                     
+      <p th:text="${'Path = ' + path}"></p>
+      <p th:text="${'Details = ' + message}"></p>
+    </div>
+  </body>
+</html>

@@ -22,11 +22,11 @@ import com.tirthal.learning.model.Message;
 import com.tirthal.learning.service.MessageService;
 
 @RestController
-public class MessageController {
+public class MessageRestController {
 
-	private static final Logger log = LoggerFactory.getLogger(MessageController.class);	
+	private static final Logger log = LoggerFactory.getLogger(MessageRestController.class);	
 	
-	@Autowired
+	@Autowired(required=false)
 	private MessageService messageService;
 		
 	@RequestMapping(value="/messages", method=RequestMethod.GET)

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Messages List!</title>
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+  </head>
+
+  <body>  	  			   
+	    <h2>Add a message</h2>
+	    <form action="#" th:method="post" th:action="@{/messages.html}" th:object="${message}">
+		    <table>
+                <tr>
+                    <td>Title:</td>
+                    <td><input type="text" th:field="*{title}" size="100" maxlength="255" /></td>
+                    <td th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error">Title Error</td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td><input type="text" th:field="*{description}"  size="100" maxlength="1000" /></td>
+                    <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error">Description Error</td>
+                </tr>
+                <tr>
+                    <td colspan="3"><br/><button type="submit" class="button">Submit</button></td>
+                </tr>
+            </table>
+	    </form>
+	    
+	    <hr />	    	    	    
+	    
+	    <table th:unless="${#lists.isEmpty(messages)}" border="1">
+	    	 <tr><td colspan="4" align="center"><h2>All Messages</h2></td></tr>
+	    	
+		 	 <tr class="heading">
+		 	  	<td>Id</td>
+		 	  	<td>Title</td>
+		 	  	<td>Description</td>
+		 	  	<td>Action</td>
+		 	  </tr>
+		 
+		 	 <tr th:each="message : ${messages}" class="content">	    	 		    	 	    	 	
+		 	 	<td><span th:text="${message.id}"></span></td>	    	 	
+		 	 	<td><span class="messageTitle" th:if="${message.title}" th:text="${message.title}"></span></td>	    	 	
+		 	 	<td><span class="messageDescription" th:if="${message.description}" th:text="${message.description}"></span></td>
+		 	 	<td>
+		 	 		<form action="#" th:method="delete" th:action="@{/messages.html}">
+			       		<input hidden="id" th:value="${message.id}" name="id"></input>
+			       		<input class="button" type="submit" value="Delete"></input>
+		     		</form>
+		 	 	</td>	    	 				   		    	 			    	   
+		 	</tr>	    		    	 
+	    </table>	    	    	    
+  </body>
+</html>
