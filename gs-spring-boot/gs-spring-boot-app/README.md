@@ -2,18 +2,22 @@
 
 Manually created maven based project for POC of
 
-* Spring Boot + Spring MVC REST
+* Spring Boot + Spring Web (MVC and REST) + Thymeleaf (Template engine)
 * Spring Boot + Swagger UI
 * Spring Boot + Properties customization
 * Spring Boot + Spring Data JPA + H2 Database + FlywayDB
+* Spring Boot + Spring Data REST + HAL browser
 * Spring Boot + Production-ready features of Spring Boot Actuator
-* Spring Boot + Testing (JUnit, Hemcrest, Mockito, Spring Test) 
+* Spring Boot + Hawtio (a lightweight web console to monitor and manage application)
+* Spring Boot + Developer Tools (for automatic restart, livereload support..)
+* Spring Boot + Lombok (a java annotation library to reduce boilerplate code)
+* Spring Boot + Testing (JUnit, Hemcrest, AssertJ, Mockito, Spring Test) 
 
 ## Prerequisite
 
 - Java 1.8+
 - Maven
-- Spring STS IDE
+- Spring STS IDE: [Install Lombok Plugin](https://projectlombok.org/download.html)
 	
 ## How to setup this project in STS?
 
@@ -26,42 +30,47 @@ Manually created maven based project for POC of
 ## How to run the application?
 
 * Run "App.java" as java application in STS / Run "mvn spring-boot:run" maven command on command prompt. 
-* Open "http://localhost:8080/" in browser - You should see "Welcome to the Spring Boot application" message, coming from HomeController.java controller.
-* Open "http://localhost:8080/test.html" in browser - You should see "Test Html Page - Welcome to the Spring Boot application" text in blue color, coming from test.html.
-* Open "http://localhost:8080/swagger-ui.html" in browser - You should be able to test REST API using Swagger UI.
-* Open "http://localhost:8080/h2-console" in browser - You should be able to access H2 database.
-* Open "http://localhost:8080/health" in browser - You should be able to see application health information.
-* Open "localhost:8080/hawtio/index.html" in browser - You should be able to see a lightweight hawtio web console for the application monitoring.
+* Try following in browser:
+	- `http://localhost:8080/`: You should see "Welcome to the Spring Boot application" message, coming from HomeController.java controller.
+	- `http://localhost:8080/test.html`: You should see "Test Html Page - Welcome to the Spring Boot application" text in blue color, coming from test.html.
+	- `http://localhost:8080/swagger-ui.html`: You should be able to test REST API using Swagger UI.
+	- `http://localhost:8080/h2-console`: You should be able to access H2 database.
+	- `http://localhost:8080/api/browser/index.html#/api/messages`: You should be able to try HAL browser and Spring Data REST APIs.
+	- `http://localhost:8080/messages.html`: You should be able to see Spring MVC demo page, coming from messageList.html.
+	- `http://localhost:8080/health`: You should be able to see application health information.
+	- `http://localhost:8080/hawtio/index.html`: You should be able to see a lightweight hawtio web console for the application monitoring.
 	
 ## Steps to create Spring Boot project manually?
 
 Easiest approach to create Spring Boot project skeleton could be using Spring Initializer or Spring Boot CLI. However, following manual steps also work greatly for getting your hands dirty with Spring Boot.
 
-### Spring Boot + Spring MVC REST
+### Spring Boot +Spring Web (MVC and REST) + Thymeleaf (Template engine)
 
 * STS - Create New Maven Project with default "maven-archetype-quickstart"
 	
-* Open pom.xml and add Spring boot dependencies: spring-boot-starter-parent + other dependencies as per need like spring-boot-starter-web for Spring MVC
+* Open pom.xml and add Spring boot dependencies: spring-boot-starter-parent + other dependencies as per need like spring-boot-starter-thymeleaf (which internally includes spring-boot-starter-web for Spring MVC and associated dependencies)
 
 		<parent>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-parent</artifactId>
-		    <version>1.3.5.RELEASE</version>
+		    <version>1.4.0.RELEASE</version>
 		</parent>
 		<dependencies>
-		    <dependency>
-		        <groupId>org.springframework.boot</groupId>
-		        <artifactId>spring-boot-starter-web</artifactId>
-		    </dependency>
+		  <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
 		</dependencies>
 
 * Open App.java, added @SpringBootApplication class level annotation and added SpringApplication.run(App.class, args) in main method.
 
-* Add controller package. Creat HomeController.java with Spring MVC provided @RestController and @RequestMapping annotations. This enables to access REST endpoints using browser, like http://localhost:8080/
+* Add controller package. Create HomeRestController.java with Spring MVC provided @RestController and @RequestMapping annotations. This enables to access REST endpoints using browser, like http://localhost:8080/
 
-* Add "resources/public" folder underneath "src/main" to keep static UI resources of an application. For example, test.html. This enables to access static resources using browser, like http://localhost:8080/test.html		
+* Add "resources/public" folder underneath "src/main" to keep static UI resources of an application. For example, "test.html". This enables to access static resources using browser, like http://localhost:8080/test.html
 
-* That's it to create basic Spring Boot based basic project structure manually.  
+* Add "resources/templates" folder underneath "src/main" to keep view components. For example, customized "error.html". Try to access page which doesn't exist, like http://localhost:8080/show-invalid-page.html 
+
+* Awesome, Spring Boot based basic project structure is created manually.  
 
 ### Spring Boot + Swagger UI
 
@@ -80,7 +89,7 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 	        <scope>compile</scope>
 	    </dependency>
     
-* Created SwaggerConfig.java to enable Swagger.
+* Create SwaggerConfig.java to enable Swagger.
 
 * This enables to test REST APIs using swagger UI in browser: http://localhost:8080/swagger-ui.html	
 	
@@ -113,13 +122,40 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 
 * application.properties - Configure Spring Boot provided h2, datasource, flyway and jpa properties.
 
-* Created "db\migration\" folder underneath resources folder to keep FlywayDB migration SQL scripts.
+* Create "db\migration\" folder underneath resources folder to keep FlywayDB migration SQL scripts.
 
-* Created Message.java (JPA entity) and MessageRepository.java (extending JpaRepository of Spring Data JPA).
+* Create Message.java (JPA entity) and MessageRepository.java (extending JpaRepository of Spring Data JPA).
 
-* Created MessageService.java, which communicates with persistence layer using MessageRepository. 
+* Create MessageService.java, which communicates with persistence layer using MessageRepository. 
 
-* Created MessageController.java, which uses MessageService. Ready to test these Message CRUD REST APIs using swagger UI in browser: http://localhost:8080/swagger-ui.html
+* Create MessageRestController.java, which uses MessageService. Ready to test these Message CRUD REST APIs using swagger UI in browser: http://localhost:8080/swagger-ui.html
+
+* Create messageList.html and MessageMvcController.java using Thymeleaf and Spring MVC. Try in browser: http://localhost:8080/messages.html 
+
+* Done with fundamental end-to-end flow (layered architecture), from UI to Controller to Service to Repository to DB.
+
+### Spring Boot + Spring Data REST + HAL browser
+
+* For easily building hypermedia-driven REST web services on top of Spring Data repositories
+
+* Add Spring Data REST and optional HAL browser tool dependencies in pom.xml
+
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-browser</artifactId>
+		</dependency>
+
+* Configure "spring.data.rest.basePath" in "application.properties"
+
+* Start using Spring REST DATA, such as applied @RepositoryRestResource in MessageRepository.java
+
+* Try HAL browser: http://localhost:8080/api
+
+* Try REST services exposed by Spring Data REST: http://localhost:8080/api/messages
 
 ### Spring Boot + Production-ready features of Spring Boot Actuator
 
@@ -132,7 +168,8 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 
 * [Actuator endpoints allow to monitor and interact with the application](http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html), for example, 
 	- http://localhost:8080/health : Shows application health information
-	- http://localhost:8080/metrics : Shows ‘metrics’ information for the current application
+	- http://localhost:8080/metrics : Shows metrics information for the current application
+	- http://localhost:8080/flyway : Shows any Flyway database migrations that have been applied
 
 ### Spring Boot + Hawtio (a lightweight web console to monitor and manage application)
 
@@ -149,7 +186,7 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 			<version>1.4.65</version>
 		</dependency>
 
-* Created HawtioConfig.java to enable Hawtio.
+* Create HawtioConfig.java to enable Hawtio.
 
 * This enables to use Hawtio web console via browser: localhost:8080/hawtio/index.html
 
@@ -170,7 +207,18 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 
 * The developer tools will be disabled when your application is running from a fully packaged JAR or WAR file, so it’s unnecessary to remove this dependency before building a production deployment.
 
-### Spring Boot + Testing (JUnit, Hemcrest, Mockito, Spring Test) 
+### Spring Boot + Lombok (a java annotation library to reduce boilerplate code)
+
+* Add Lombok dependencies in pom.xml
+	
+	 <dependency>	
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+  	 </dependency>
+
+* Start using [Lombok features](https://projectlombok.org/features/). For example, see Message.java not having traditional boilerplate code 
+
+### Spring Boot + Testing (JUnit, Hemcrest, AssertJ Mockito, Spring Test) 
 
 * Add Testing dependencies in pom.xml
 
@@ -180,13 +228,13 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
         <scope>test</scope>
     </dependency>
 
-* Created application-test.properties file.
+* Create application-test.properties file.
     
-* Created few unit tests. 
-	- HelloControllerTest.java for JUnit and Hamcrest demo.
-	- MessageControllerTest.java for Mockito demo.
-	- MessageRepositoryIntegrationTest.java for integration demo using Spring Test.
-	- MessageControllerWebIntegrationTest.java for Controller to Repository integration demo using Spring Test.  
+* Create few unit tests. 
+	- 'JunitHemcrestAssertjDemoTest.java': Demo of JUnit, Hamcrest and AssertJ usage
+	- 'MockitoDemoTest.java': Demo of Mocking using Mockito without leveraging Spring Boot's @MockBean
+	- 'MockMvcDemoTest.java': Demo of Spring MVC Controller testing using @WebMvcTest and @MockBean
+	- 'TestRestTemplateDemoTest.java': Demo of integration testing using WebEnvironment.RANDOM_PORT and TestRestTemplate (a convenience alternative to Spring’s RestTemplate that is useful in integration tests)
 
 * How to run test cases?
 	- STS: select project or junit package or test class, right click and run as "JUnit tests" / "Maven test" by passing "-Dspring.profiles.active=test" in VM arguments		
