@@ -211,10 +211,10 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 
 * Add Lombok dependencies in pom.xml
 	
-	 <dependency>	
-		<groupId>org.projectlombok</groupId>
-		<artifactId>lombok</artifactId>
-  	 </dependency>
+		<dependency>	
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
 
 * Start using [Lombok features](https://projectlombok.org/features/). For example, see Message.java not having traditional boilerplate code 
 
@@ -222,11 +222,11 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 
 * Add Testing dependencies in pom.xml
 
-	<dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-test</artifactId>
-        <scope>test</scope>
-    </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 * Create application-test.properties file.
     
