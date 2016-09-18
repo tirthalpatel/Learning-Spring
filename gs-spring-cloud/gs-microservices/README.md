@@ -4,7 +4,7 @@ With the advent of microservice and cloud-native application architectures, buil
 
 Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems. Many of these patterns are provided via wrapping the battle-tested components found at NetflixOSS.
 
-Let me get started with it.
+Let me get started with [Spring Cloud: Brixton.SR5](http://cloud.spring.io/spring-cloud-static/Brixton.SR5/).
 
 ## Key Learning Goals
 
@@ -47,6 +47,13 @@ For more detail, refer 'README' of each project.
 ## TODO
 
 * Enable to run via script or docker
+
+## Also Refer
+
+* [Spring Cloud Project](http://projects.spring.io/spring-cloud/)
+* [Wiring Microservices with Spring Cloud](https://www.infoq.com/articles/spring-cloud-service-wiring)
+* [Build self-healing distributed systems with Spring Cloud](http://www.javaworld.com/article/2927920/cloud-computing/build-self-healing-distributed-systems-with-spring-cloud.html)
+* [Building Microservices with Spring Cloud and Docker](http://www.kennybastani.com/2015/07/spring-cloud-docker-microservices.html)
 
 ## Disclaimer
 
