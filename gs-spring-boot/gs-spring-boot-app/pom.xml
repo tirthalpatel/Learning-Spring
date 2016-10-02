@@ -73,6 +73,13 @@
 	</dependency>
 	<!-- End: Added Spring Data REST dependency -->
     
+    <!-- Start: Add Spring Data Redis dependency -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+    <!-- End: Add Spring Data Redis dependency -->
+    
     <!-- Start: Inform Spring Boot to enable Production-ready features like application health information -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
