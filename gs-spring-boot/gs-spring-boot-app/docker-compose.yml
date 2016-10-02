@@ -1,0 +1,30 @@
+version : '2'
+services:
+  
+  gs-spring-boot-app-server:
+    build:
+      context: . 
+      dockerfile: gs-spring-boot-app.dockerfile
+    image: gsspringbootapp
+    ports: 
+      - "8080:8080"
+    networks:
+      - net-spring-redis
+    depends_on:
+      - redis-server
+    environment:
+      - REDIS_HOST=redis-server
+      - REDIS_PORT=6379
+    container_name: gs-spring-boot-app-server
+  
+  redis-server:
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - net-spring-redis
+    container_name: redis-server
+
+networks:
+  net-spring-redis:
+    driver: bridge
