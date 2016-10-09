@@ -3,20 +3,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.tirthal.learning</groupId>
-	<artifactId>gs-xxng-client</artifactId>
-	<version>1.0</version>
+	<parent>
+        <groupId>com.tirthal.learning</groupId>
+        <artifactId>gs-microservices</artifactId>
+        <version>1.0</version>
+    </parent>	
+	<artifactId>gs-xxng-client</artifactId>	
 	<packaging>jar</packaging>
-
 	<name>gs-xxng-client</name>
 	<description>Demo client project of Xing Xong service</description>
-
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.0.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -53,18 +48,6 @@
 		</dependency>
 	</dependencies>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Brixton.SR5</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -73,6 +56,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

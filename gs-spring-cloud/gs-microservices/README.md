@@ -4,7 +4,7 @@ With the advent of microservice and cloud-native application architectures, buil
 
 Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems. Many of these patterns are provided via wrapping the battle-tested components found at NetflixOSS.
 
-Let me get started with [Spring Cloud: Brixton.SR5](http://cloud.spring.io/spring-cloud-static/Brixton.SR5/).
+This is maven based multi-module project structure. The parent project contains various child projects to get started with [Spring Cloud Features](http://cloud.spring.io/spring-cloud-static/spring-cloud.html). 
 
 ## Key Learning Goals
 
