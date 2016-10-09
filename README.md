@@ -12,9 +12,9 @@ Numerous projects for getting my hands dirty with Spring IO technology stack.
 
 ## Spring Data
 
-* [gs-spring-data-jpa](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-data-jpa) - Sample code snippet for getting hands dirty with standard Spring JPA and Spring Data JPA (Maven based project structure without Spring Boot).
+* [gs-spring-data-jpa](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-data/gs-spring-data-jpa) - Sample code snippet for getting hands dirty with standard Spring JPA and Spring Data JPA (Maven based project structure without Spring Boot).
 
-* [gs-spring-data-rest](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-data-rest) - Sample code snippet for getting hands dirty with Spring Data REST (Maven based project structure using Spring Boot). 
+* [gs-spring-data-rest](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-data/gs-spring-data-rest) - Sample code snippet for getting hands dirty with Spring Data REST (Maven based project structure using Spring Boot). 
 
 * Credit: [Spring Data Repositories - A Deep Dive](https://github.com/olivergierke/repositories-deepdive), [Spring Data Examples](https://github.com/spring-projects/spring-data-examples), [Spring Data Book Source](https://github.com/spring-projects/spring-data-book)
 
