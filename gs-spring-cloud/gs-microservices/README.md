@@ -42,11 +42,11 @@ For more detail, refer 'README' of each project.
 5. `gs-xxng-client`: This is demo client, which consumes Xing Xong service using Ribbon with Eureka and enables circuit breaker pattern using Hystrix.
 6. `gs-hystrix-dashboard`: This is a Hystrix Dashboard with Turbine to display the health of each circuit breaker in an efficient manner.
 7. `gs-zuul-proxy-server`: This is a Zuul proxy server for routing, filtering and server side load balancing.
-
+8. `gs-games-detail-rxjava-gateway`: This is demo of API Gateway using RxJava for concurrent API aggregation and transformation of `gs-games-catalog-service`, `gs-games-recommendation-service` and `gs-games-review-service`. Similar implementation approach could be used for "Backend For Frontends (BFF)" pattern too.
 
 ## TODO
 
-* Enable to run via script or docker
+* Enable to run via script or docker compose
 
 ## Also Refer
 
