@@ -52,7 +52,8 @@ public class XxngRestController {
 	}
 	
 	// Method signature and return type must match with original method, i.e. with playXingXongGame
-	public ResponseEntity<String> fallbackXingXongGame(@RequestParam(value="lb", required=false, defaultValue="true") Boolean lb) {
+	@SuppressWarnings("unused")
+	private ResponseEntity<String> fallbackXingXongGame(@RequestParam(value="lb", required=false, defaultValue="true") Boolean lb) {
 		
 		// Ideally this can return some meaningful default response, if applicable for given use case!
 		
