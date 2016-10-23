@@ -18,7 +18,11 @@
         <module>gs-xxng-service</module>
         <module>gs-xxng-client</module> 
         <module>gs-hystrix-dashboard</module>
-        <module>gs-zuul-proxy-server</module>              
+        <module>gs-zuul-proxy-server</module>
+        <module>gs-games-catalog-service</module>
+		<module>gs-games-review-service</module>
+		<module>gs-games-recommendation-service</module>
+        <module>gs-games-detail-rxjava-gateway</module>              
     </modules>
 	
 	<!-- Keeping spring-boot-starter-parent and spring-cloud-dependencies here to enable version upgrade in all child modules at one go -->
