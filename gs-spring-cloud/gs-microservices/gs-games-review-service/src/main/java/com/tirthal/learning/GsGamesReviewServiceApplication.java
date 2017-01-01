@@ -31,12 +31,12 @@ public class GsGamesReviewServiceApplication {
 class ExampleGameReviewsRestController {
 
 	@RequestMapping(value = "/reviews", method = RequestMethod.GET)
-	public ResponseEntity<Iterable<List<Review>>> games() {
+	public ResponseEntity<Iterable<List<Review>>> allReviews() {
 		return new ResponseEntity<>(SampleData.REVIEWS.values(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/games/{glId}/reviews", method = RequestMethod.GET)
-	public ResponseEntity<List<Review>> game(@PathVariable String glId) {
+	public ResponseEntity<List<Review>> reviewsByGame(@PathVariable String glId) {
 		
 		if(SampleData.REVIEWS.containsKey(glId))
 			return new ResponseEntity<>(SampleData.REVIEWS.get(glId), HttpStatus.OK);

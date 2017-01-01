@@ -14,8 +14,10 @@ Just a plain-vanila Games Recommendation MicroService, which leverages Spring Cl
 
 ## Key Notes
 
-This service creates hard-coded games recommendations sample data using Spring Boot's CommandLineRunner and returns in REST services response. Ideally, it could have interaction with chosen data storage using Spring Data. 
+This service creates hard-coded games recommendations sample data using Spring Boot's CommandLineRunner and returns in REST services response. Ideally, it could have interaction with chosen data storage using Spring Data to return recommendations based on user likes or preferences. 
 
 ### Try
 
-To be implemented...
+1. Return all recommendations: `http://localhost:6004/recommendations`
+2. Return recommendations for given logical game id: `http://localhost:6004/games/G100/recommendations`
+3. Return 'No Recommendation"', if recommendation doesn't exist for given logical game id: `http://localhost:6004/games/G001/recommendations`
