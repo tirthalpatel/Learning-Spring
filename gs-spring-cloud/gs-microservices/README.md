@@ -8,14 +8,14 @@ This is maven based multi-module project structure. The parent project contains 
 
 ## Key Learning Goals
 
-1. __Distributed / Versioned Configuration__ --- Spring Cloud Config
-2. __Service Registration and Discovery__ --- Spring Cloud Netflix Eureka
-3. __Routing and Client Side Load Balancing__ --- Ribbon-Enabled RestTemplate with Eureka
-4. __Fault Tolerance with Circuit Breakers__ --- Spring Cloud Netflix Hystrix Client
-5. __Intelligent routing, filtering and server side load balancing__ --- Spring Cloud Netflix Zuul
-6. __API Gateway for Concurrent API Aggregation and Transformation__ --- RxJava with Spring MVC (included in Spring Cloud Netflix)
-7. __Monitoring via a near real-time operational insight platform__ --- Spring Cloud Netflix Hystrix Dashboard, Spectator, Servo, and Atlas
-8. __A Lightweight Message Broker for linking nodes of a Distributed System__ --- Spring Cloud Bus
+* __Distributed / Versioned Configuration__ --- Spring Cloud Config
+* __Service Registration and Discovery__ --- Spring Cloud Netflix Eureka
+* __Routing and Client Side Load Balancing__ --- Ribbon-Enabled RestTemplate with Eureka
+* __Fault Tolerance with Circuit Breakers__ --- Spring Cloud Netflix Hystrix Client
+* __Intelligent routing, filtering and server side load balancing__ --- Spring Cloud Netflix Zuul
+* __API Gateway for Concurrent API Aggregation and Transformation__ --- RxJava with Spring MVC (included in Spring Cloud Netflix)
+* __Monitoring via a near real-time operational insight platform__ --- Spring Cloud Netflix Hystrix Dashboard, Spectator, Servo, and Atlas
+* __A Lightweight Message Broker for linking nodes of a Distributed System__ --- Spring Cloud Bus
 
 ## Prerequisite
 
@@ -35,6 +35,8 @@ All projects are Spring Boot and Maven based. Default port for each application 
 
 For more detail, refer 'README' of each project.
 
+### Demo of Spring Cloud Config and Spring Cloud Netflix OSS (Eureka, Ribbon, Hystrix and Zuul)
+
 1. `gs-config-server`: This is cloud config server, which internally refers configurations in `gs-config-repo`.
 2. `gs-config-client` (Optional): This is demo client project leveraging cloud config server features.
 3. `gs-discovery-eureka-server`: This is Eureka server for service discovery.
@@ -42,7 +44,15 @@ For more detail, refer 'README' of each project.
 5. `gs-xxng-client`: This is demo client, which consumes Xing Xong service using Ribbon with Eureka and enables circuit breaker pattern using Hystrix.
 6. `gs-hystrix-dashboard`: This is a Hystrix Dashboard with Turbine to display the health of each circuit breaker in an efficient manner.
 7. `gs-zuul-proxy-server`: This is a Zuul proxy server for routing, filtering and server side load balancing.
-8. `gs-games-detail-rxjava-gateway`: This is demo of API Gateway using RxJava for concurrent API aggregation and transformation of `gs-games-catalog-service`, `gs-games-recommendation-service` and `gs-games-review-service`. Similar implementation approach could be used for "Backend For Frontends (BFF)" pattern too.
+
+### Demo of API Gateway using RxJava
+
+1. `gs-config-server`: This is cloud config server.
+2. `gs-discovery-eureka-server`: This is Eureka server for service discovery.
+3. `gs-games-catalog-service`: Just a plain-vanila games catalog microservice.
+4. `gs-games-review-service`: Just a plain-vanila games reviews microservice.
+5. `gs-games-recommendation-service`: Just a plain-vanila games recommendations microservice.
+6. `gs-games-detail-rxjava-gateway`: This is demo of API Gateway using RxJava for concurrent API aggregation and transformation of `gs-games-catalog-service`, `gs-games-recommendation-service` and `gs-games-review-service`.
 
 ## TODO
 
