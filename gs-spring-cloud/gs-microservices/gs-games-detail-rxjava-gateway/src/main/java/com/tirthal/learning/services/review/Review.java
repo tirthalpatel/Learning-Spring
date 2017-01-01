@@ -15,6 +15,10 @@ public class Review {
 	
 	private String date;
 
+	public Review() {
+		
+	}
+	
 	public Review(String userName, String title, String description, int rating, String date) {
 		super();
 		this.userName = userName;

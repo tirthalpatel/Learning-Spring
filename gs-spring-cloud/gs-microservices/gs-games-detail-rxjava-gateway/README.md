@@ -1,6 +1,8 @@
 # API Gateway using RxJava
 
-This is demo of API Gateway using RxJava for concurrent API aggregation and transformation of `gs-games-catalog-service`, `gs-games-review-service` and `gs-games-recommendation-service`. Similar implementation approach could be used for "Backend For Frontends (BFF)" pattern too.
+This is demo of API Gateway using RxJava for concurrent API aggregation and transformation of `gs-games-catalog-service`, `gs-games-review-service` and `gs-games-recommendation-service`. 
+
+Similar implementation approach could be used for "Backend For Frontends (BFF)" pattern too.
 
 ## Pre-requisites
 
@@ -18,7 +20,7 @@ See 'GameDetailRestController.java' and follow code.
 
 ### Try
 
-1. Return game detail by logical game id: `http://localhost:6001/game/G100`
+1. Return game detail by logical game id: `http://localhost:6001/game/G100` / `http://localhost:6001/game/G200`
 2. What if game doesn't exist: `http://localhost:6001/game/G001`
 
 ## Reference

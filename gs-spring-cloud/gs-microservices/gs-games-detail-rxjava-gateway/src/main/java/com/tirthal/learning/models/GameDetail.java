@@ -2,6 +2,7 @@ package com.tirthal.learning.models;
 
 import java.util.List;
 
+import com.tirthal.learning.services.recommendations.Game;
 import com.tirthal.learning.services.review.Review;
 
 public class GameDetail {
@@ -9,6 +10,8 @@ public class GameDetail {
 	private String glId, title;
 	
 	private List<Review> reviews;
+	
+	private List<Game> recommendations;
 
 	public String getGlId() {
 		return glId;
@@ -34,4 +37,11 @@ public class GameDetail {
 		this.reviews = reviews;
 	}
 
+	public List<Game> getRecommendations() {
+		return recommendations;
+	}
+
+	public void setRecommendations(List<Game> recommendations) {
+		this.recommendations = recommendations;
+	}
 }

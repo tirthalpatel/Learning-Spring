@@ -9,6 +9,7 @@ import org.springframework.web.context.request.async.DeferredResult;
 
 import com.tirthal.learning.models.GameDetail;
 import com.tirthal.learning.services.catalog.CatalogIntegrationService;
+import com.tirthal.learning.services.recommendations.RecommendationIntegrationService;
 import com.tirthal.learning.services.review.ReviewIntegrationService;
 
 import rx.Observable;
@@ -23,17 +24,22 @@ public class GameDetailRestController {
 	@Autowired
 	ReviewIntegrationService reviewIntegrationService;
 	
+	@Autowired
+	RecommendationIntegrationService recommendationIntegrationService;
+	
 	@RequestMapping(value = "/game/{glId}", method = RequestMethod.GET)
 	public DeferredResult<GameDetail> gameDetail(@PathVariable String glId) {					
 		
 		Observable<GameDetail> gameDetail = Observable.zip(
 				catalogIntegrationService.getGame(glId),
-				reviewIntegrationService.getReviews(glId),	
-				(game, reviews) -> {
+				reviewIntegrationService.getReviews(glId),
+				recommendationIntegrationService.getRecommendations(glId),
+				(game, reviews, recommendations) -> {
 					GameDetail detail = new GameDetail();
 					detail.setGlId(game.getGlId());
 					detail.setTitle(game.getTitle());
 					detail.setReviews(reviews);
+					detail.setRecommendations(recommendations);
 					
 					return detail;
 				}

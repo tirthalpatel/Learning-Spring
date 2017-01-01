@@ -1,4 +1,4 @@
-package com.tirthal.learning.services.catalog;
+package com.tirthal.learning.services.recommendations;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
