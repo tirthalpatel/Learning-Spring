@@ -33,6 +33,13 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- Dependency to enable automatically instrumentation of traces (see options in pom.xml of 'gs-games-detail-rxjava-gateway') -->					
+		<!-- Option: Good for demo - Zipkin will inherently include Sleuth and send traces to Zipkin server over HTTP -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>			
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

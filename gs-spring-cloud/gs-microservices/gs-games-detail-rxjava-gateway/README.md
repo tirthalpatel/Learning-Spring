@@ -22,6 +22,7 @@ See 'GameDetailRestController.java' and follow code.
 
 1. Return game detail by logical game id: `http://localhost:6001/game/G100` / `http://localhost:6001/game/G200`
 2. What if game doesn't exist: `http://localhost:6001/game/G001`
+3. Just uncomment line 47 (Thread.sleep) in ReviewIntegrationService.java, restart service and try step-1 again: should show reviews data returned from getReviewsFallback() method 
 
 ## Reference
 

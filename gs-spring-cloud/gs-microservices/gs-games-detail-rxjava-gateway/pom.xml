@@ -37,11 +37,43 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- Dependency to enable automatically instrumentation of traces (choose any one option from below) -->
+		
+		<!-- Option-1: If need to capture traces in logs only to use with log aggregation tools like Kibana, Splunk, etc -->
+		<!--  
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>			
+		</dependency>
+		-->
+				
+		<!-- Option-2: Good for demo - Zipkin will inherently include Sleuth and send traces to Zipkin server over HTTP -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>			
+		</dependency>		
+		
+		<!-- Option-3: Good for production - Add Sleuth with Zipkin over Spring Cloud Stream with Rabbit or any supported binder -->
+		<!--
+		<dependency>
+		     <groupId>org.springframework.cloud</groupId>
+		     <artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<dependency>
+		     <groupId>org.springframework.cloud</groupId>
+		     <artifactId>spring-cloud-sleuth-stream</artifactId>
+		</dependency>
+		<dependency>
+		     <groupId>org.springframework.cloud</groupId>
+		     <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+		</dependency>
+		-->
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
+		</dependency>		
 	</dependencies>
 
 	<build>
