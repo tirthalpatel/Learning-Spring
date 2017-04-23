@@ -1,6 +1,6 @@
 # Getting started with Spring Boot Application
 
-Manually created maven based project for POC of
+Manually created maven based project for POC of Spring Boot (1.5.2.RELEASE version) to try following.
 
 * Spring Boot + Spring Web (MVC and REST) + Thymeleaf (Template engine)
 * Spring Boot + Swagger UI
@@ -88,7 +88,7 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 		<parent>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-parent</artifactId>
-		    <version>1.4.0.RELEASE</version>
+		    <version>1.5.2.RELEASE</version>
 		</parent>
 		<dependencies>
 		  <dependency>
@@ -233,12 +233,12 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 		<dependency>
 			<groupId>io.hawt</groupId>
 			<artifactId>hawtio-springboot</artifactId>
-			<version>1.4.65</version>
+			<version>1.5.0</version>
 		</dependency>
 		<dependency>
 			<groupId>io.hawt</groupId>
 			<artifactId>hawtio-core</artifactId>
-			<version>1.4.65</version>
+			<version>1.5.0</version>
 		</dependency>
 
 * Create HawtioConfig.java to enable Hawtio.
