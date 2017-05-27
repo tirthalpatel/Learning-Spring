@@ -4,6 +4,8 @@ Demo project for Spring Cloud Config Server (which offers central management for
 
 The Server provides an HTTP, resource-based API for external configuration (name-value pairs, or equivalent YAML content). The server is easily embeddable in a Spring Boot application using the @EnableConfigServer annotation. 
 
+Also refer [Externalized Configuration Pattern](http://microservices.io/patterns/externalized-configuration.html)
+
 ## Pre-requisites
 
 * [Parent README.md](../README.md)

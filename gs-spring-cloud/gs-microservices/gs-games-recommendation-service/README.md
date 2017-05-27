@@ -1,6 +1,6 @@
 # Games Recommendation MicroService
 
-Just a plain-vanila Games Recommendation MicroService, which leverages Spring Cloud stack. This service is used in `gs-games-detail-rxjava-gateway` POC.
+Just a plain-vanilla Games Recommendation MicroService, which leverages Spring Cloud stack. This service is used in `gs-games-detail-rxjava-gateway` POC.
 
 * Pulling the configuration information from Spring Cloud Config Server
 * Registering to Spring Cloud Netflix Eureka Server for Service Discovery

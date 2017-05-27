@@ -4,15 +4,17 @@ This is demo of API Gateway using RxJava for concurrent API aggregation and tran
 
 Similar implementation approach could be used for "Backend For Frontends (BFF)" pattern too.
 
+Refer [API Gateway / Backend for Front-End Pattern](http://microservices.io/patterns/apigateway.html)
+
 ## Pre-requisites
 
 * [Parent README.md](../README.md)
 * Projects that need to be started before
 	- [gs-config-server](../gs-config-server/README.md): For pulling the configuration information
 	- [gs-discovery-eureka-server](../gs-discovery-eureka-server/README.md): For discovering service instances from Eureka server
-	- [gs-games-catalog-service](../gs-games-catalog-service/README.md): Just a plain-vanila games catalog microservice
-	- [gs-games-review-service](../gs-games-review-service/README.md): Just a plain-vanila games reviews microservice
-	- [gs-games-recommendation-service](../gs-games-recommendation-service/README.md): Just a plain-vanila games recommendations microservice
+	- [gs-games-catalog-service](../gs-games-catalog-service/README.md): Just a plain-vanilla games catalog microservice
+	- [gs-games-review-service](../gs-games-review-service/README.md): Just a plain-vanilla games reviews microservice
+	- [gs-games-recommendation-service](../gs-games-recommendation-service/README.md): Just a plain-vanilla games recommendations microservice
 
 ## Key Notes
 

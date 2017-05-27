@@ -16,6 +16,8 @@ What is Automatically Instrumented, if Sleuth is added/enabled in microservice p
 
 There are essentially two steps (1) Enable microservice project for automatic instrumentation using Sleuth (2) Consider choice of log aggregation tools for visualizing and querying traces such as Zipkin, Kibana, Splunk, etc
 
+Refer [Distributed Tracking Pattern](http://microservices.io/patterns/observability/distributed-tracing.html)
+
 ## Pre-requisites
 
 * [Parent README.md](../README.md)

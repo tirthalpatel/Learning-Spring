@@ -4,8 +4,8 @@ Demo client project, which consumes Xing Xong service and randomly returns twin 
 
 * Pulling the configuration information from Spring Cloud Config Server
 * Registering to Spring Cloud Netflix Eureka Server for Service Discovery 
-* Using Ribbon with Eureka for Routing and Client Side Load Balancing
-* Spring Cloud Netflix Hystrix Client for Fault Tolerance with Circuit Breaker Pattern
+* Using Ribbon with Eureka for Routing and Client Side Load Balancing - refer [Client-side Service Discovery Pattern](http://microservices.io/patterns/client-side-discovery.html)
+* Spring Cloud Netflix Hystrix Client for Fault Tolerance with Circuit Breaker Pattern - refer [Circuit Breaker Pattern](http://microservices.io/patterns/reliability/circuit-breaker.html)
 
 ## Pre-requisites
 

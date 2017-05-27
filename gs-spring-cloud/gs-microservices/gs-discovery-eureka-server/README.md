@@ -2,6 +2,8 @@
 
 Demo project for Spring Cloud Netflix Eureka server. The server can be configured and deployed to be highly available, with each server replicating state about the registered services to the others.
 
+Refer [Service Registry Pattern](http://microservices.io/patterns/service-registry.html)
+
 ## Pre-requisites
 
 * [Parent README.md](../README.md)

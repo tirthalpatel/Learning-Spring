@@ -3,7 +3,7 @@
 Demo project of Xing Xong MicroService (e.g. Input -> Output = Xing -> Xong, Ping -> Pong, Ting -> Tong, ding -> dong, king -> kong...), which leverages Spring Cloud stack
 
 * Pulling the configuration information from Spring Cloud Config Server
-* Registering to Spring Cloud Netflix Eureka Server for Service Discovery
+* Registering to Spring Cloud Netflix Eureka Server for Service Discovery - refer [Self Registration Pattern](http://microservices.io/patterns/self-registration.html)
 
 ## Pre-requisites
 
