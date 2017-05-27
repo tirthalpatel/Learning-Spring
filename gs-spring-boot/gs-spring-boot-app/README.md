@@ -18,8 +18,8 @@ Manually created maven based project for POC of Spring Boot (1.5.2.RELEASE versi
 
 - Java 1.8+
 - Maven
-- Spring STS IDE: [Install Lombok Plugin](https://projectlombok.org/download.html)
-- Redis Server: [Install and Start Redis Server](http://redis.io/topics/quickstart) / [Download Redis for Windows](https://github.com/MSOpenTech/redis/tags) / [Start Redis using Docker](https://hub.docker.com/r/library/redis/)
+- Spring STS IDE for 'How to setup this project in STS?' section: [Install Lombok Plugin](https://projectlombok.org/download.html)
+- Redis Server for option 1 or 2 or 3 in 'How to run the application?' section: [Install and Start Redis Server](http://redis.io/topics/quickstart) / [Download Redis for Windows](https://github.com/MSOpenTech/redis/tags) / [Start Redis using Docker](https://hub.docker.com/r/library/redis/)
 	
 ## How to setup this project in STS?
 
@@ -30,6 +30,8 @@ Manually created maven based project for POC of Spring Boot (1.5.2.RELEASE versi
 	- Java Compiler -> Compiler compliance level = 1.8 
 
 ## How to run the application?
+
+When application is deployed and started successfully, you should see these messages in the log: `Tomcat started on port(s): 8080 (http)... Started App in x seconds...`
 
 ### Option 1: Manually
 
@@ -62,6 +64,19 @@ Manually created maven based project for POC of Spring Boot (1.5.2.RELEASE versi
 	- To connect Redis sever from client outside docker, use "Host = docker-machine ip and Port = 6379", for example, redis-cli -h <docker-ip> -p 6379  
 	- Few useful docker commands: (i) Get an IP address of docker machine: `docker-machine ip` (ii) Show all images: `docker images -a` (iii) Show all containers: `docker ps -a` (iv) Remove an image forcefully: `docker rmi -f <image-id>` (v) Remove container: `docker rm <container-name>`
 
+### Option 4: Deploying to Pivotal Cloud Foundry (Cloud PaaS)
+
+* Install [Cloud Foundry CLI](https://github.com/cloudfoundry/cli#downloads) and create [Pivotal account](https://account.run.pivotal.io/sign-up)
+* Go to application's root location, for example, `cd \D\...<path>...\gs-spring-boot-app`
+* Build application using maven: `mvn clean package` (should see success message to build jar at 'gs-spring-boot-app\target\gs-spring-boot-app-0.0.1-SNAPSHOT.jar')
+* How to deploy to Pivotal Cloud Foundry?
+	- Login to Pivotal CF (PCF) platform: `cf login -a https://api.run.pivotal.io`
+	- Create redis service instance and validate: `cf create-service rediscloud 30mb redis-service-of-gs-spring-boot-app` 
+	- Push application to PCF (internally using `manifest.yml` configuration): `cf push`	
+	- Check logs: `cf logs gs-spring-boot-app` | `cf logs gs-spring-boot-app --recent`	
+	- Application URL (configured in 'manifest.yml'): `http://gs-spring-boot-app-by-tirthalpatel.cfapps.io/messages.html`
+	- Other useful commands: `cf apps` (show all apps) | `cf services` (show all services) | `cf scale gs-spring-boot-app -i 2` (scale the app horizontally) | `cf scale gs-spring-boot-app -m 2G` (scale the app vertically) | `cf app gs-spring-boot-app` (health check of the app) | `cf restage gs-spring-boot-app` (restage app) | `cf delete gs-spring-boot-app` (delete app) | `cf delete-service redis-service-of-gs-spring-boot-app` (delete service)
+
 ## Try it 
 
 * If you started application using docker, the consider localhost = docker-machine ip
@@ -71,7 +86,7 @@ Manually created maven based project for POC of Spring Boot (1.5.2.RELEASE versi
 	- `http://localhost:8080/swagger-ui.html`: You should be able to test REST API using Swagger UI.
 	- `http://localhost:8080/h2-console`: You should be able to access H2 database.
 	- `http://localhost:8080/api/browser/index.html#/api/messages`: You should be able to try HAL browser and Spring Data REST APIs.
-	- `http://localhost:8080/messages.html`: You should be able to see Spring MVC demo page, coming from messageList.html.
+	- `http://localhost:8080/messages.html`: You should be able to see Spring MVC demo page, coming from messageList.html. Here, add message operation sends to Redis and receives from Redis.
 	- `http://localhost:8080/health`: You should be able to see application health information.
 	- `http://localhost:8080/hawtio/index.html`: You should be able to see a lightweight hawtio web console for the application monitoring.
 
