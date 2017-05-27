@@ -1,0 +1,10 @@
+---
+applications:
+- name: gs-spring-boot-app
+  memory: 1024M
+  instances: 1
+  host: gs-spring-boot-app-by-tirthalpatel
+  domain: cfapps.io
+  path: target\gs-spring-boot-app-0.0.1-SNAPSHOT.jar
+  services:
+  - redis-service-of-gs-spring-boot-app
