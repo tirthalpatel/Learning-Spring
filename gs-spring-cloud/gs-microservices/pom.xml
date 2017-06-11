@@ -22,7 +22,11 @@
         <module>gs-games-catalog-service</module>
 		<module>gs-games-review-service</module>
 		<module>gs-games-recommendation-service</module>
-        <module>gs-games-detail-rxjava-gateway</module>              
+        <module>gs-games-detail-rxjava-gateway</module>
+        <module>gs-bus-custom-events</module>
+        <module>gs-bus-hello-service</module>
+        <module>gs-bus-bye-service</module>      
+        
     </modules>
 	
 	<!-- Keeping spring-boot-starter-parent and spring-cloud-dependencies here to enable version upgrade in all child modules at one go -->

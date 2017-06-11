@@ -6,7 +6,7 @@ Spring Cloud provides tools for developers to quickly build some of the common p
 
 This is maven based multi-module project structure. The parent project contains various child projects to get started with [Spring Cloud Version: Camden.SR3](http://cloud.spring.io/spring-cloud-static/Camden.SR3/).
 
-Here, the focus is to experiment various microservices patterns using Spring cloud technology stack with plain-vanilla approach instead of building microservices for complex real-world functional use cases.
+Here, the focus is to experiment various microservices patterns quickly using Spring cloud technology stack with plain-vanilla approach instead of building microservices for complex real-world functional use cases.
 
 ## Key Learning Goals
 
@@ -16,12 +16,11 @@ Here, the focus is to experiment various microservices patterns using Spring clo
 * __Intelligent routing, filtering and server side load balancing__ --- Spring Cloud Netflix Zuul
 * __API Gateway for Concurrent API Aggregation and Transformation__ --- RxJava with Spring MVC (included in Spring Cloud Netflix)
 * __Distributed Tracing__ --- Spring Cloud Sleuth and Twitter Zipkin (Sleuth is also compatible with HTrace and log-based tracing like ELK)
-* __Monitoring via a near real-time operational insight platform__ --- Spring Cloud Netflix Spectator, Servo, and Atlas
-* __An Event Bus for linking services and service instances together using a Lightweight Message Broker__ --- Spring Cloud Bus (with RabbitMQ or Kafka as AMQP broker)
+* __An Event Bus for linking services and service instances together using a Lightweight Message Broker__ --- Spring Cloud Bus (with RabbitMQ or Kafka)
 * __Message Bus Abstraction Framework for building Event-driven Microservices__ --- Spring Cloud Stream (using RabbitMQ or Kafka Binder)
 * __Secure Applications and Services with simplified OAuth 2.0 Flows__ --- Spring Cloud Security
 * __Stubs for Service Contracts__ --- Spring Cloud Contracts
-* __Developer Productivity Tool to quickly launch common services like Config Server, Eureka, Zipkin...__ --- Spring Boot Cloud CLI
+* __Monitoring via a near real-time operational insight platform__ --- Spring Cloud Netflix Spectator, Servo, and Atlas
 
 ## Prerequisite
 
@@ -45,9 +44,9 @@ All projects are Spring Boot and Maven based. Default port for each application 
 
 ### Option 2 - Run on Pivotal Cloud Foundry (Cloud PaaS)
 
-* Install [Cloud Foundry CLI](https://github.com/cloudfoundry/cli#downloads) and create [Pivotal account](https://account.run.pivotal.io/sign-up) 
-* Create organization: `cf create-org gs-microservices`
-* Create domain: `cf create-domain gs-microservices tirthalpatel.io` (you should consider any domain name of your choice instead of tirthalpatel.io)
+* Install [Cloud Foundry CLI](https://github.com/cloudfoundry/cli#downloads) 
+* Create [Pivotal account](https://account.run.pivotal.io/sign-up) and organization (e.g. gs-microservices)
+* Create domain: `cf create-domain <org-name> <domain-name-of-your-choice>.io` (e.g. cf create-domain gs-microservices tirthalpatel.io)
 * To be added...
 
 ## Microservices Demo Projects
@@ -84,12 +83,19 @@ __Dependency__ : RabbitMQ (Alternatively Kafka is also supported by Spring Cloud
 
 __Patterns__ : [Asynchronous Messaging for Inter-service Communication](http://microservices.io/patterns/communication-style/messaging.html) 
 
-To be implemented...
-
+1. `gs-config-server`: This is cloud config server.
+2. `gs-discovery-eureka-server`: This is Eureka server for service registry.
+3. `gs-bus-hello-service` and `gs-bus-bye-service`: Just a plain-vanilla microservice to experiment events broadcasting among nodes via Spring Cloud Bus. 
 
 ## TODO
 
 * Enable to run via script or docker compose
+
+## Few Awesome Tools to Try
+
+* [Spring Boot Cloud CLI](https://cloud.spring.io/spring-cloud-cli/): Developer Productivity Tool to quickly launch common services like Config Server, Eureka, Zipkin...
+* [Spring Boot Admin](https://github.com/codecentric/spring-boot-admin): A simple UI to administrate Spring Boot applications
+* [Microservices Dashboard](https://github.com/ordina-jworks/microservices-dashboard): A dashboard to visualize links between microservices and the encompassing ecosystem
 
 ## Also Refer
 
