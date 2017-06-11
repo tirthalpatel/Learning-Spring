@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.tirthal.learning</groupId>
+		<artifactId>gs-microservices</artifactId>
+		<version>1.0</version>
+	</parent>
+	<artifactId>gs-bus-hello-service</artifactId>
+	<packaging>jar</packaging>
+	<name>gs-bus-hello-service</name>
+	<description>Say hello demo service to try Spring Cloud Bus features</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- Depending on available broker, needs to add one of Spring Cloud Bus 
+			starters -->
+		<!-- This depends on RabbitMQ broker -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency>
+		<!-- This depends on Kafka broker -->
+		<!-- 
+			<dependency> 
+				<groupId>org.springframework.cloud</groupId> 
+				<artifactId>spring-cloud-starter-bus-kafka</artifactId> 
+			</dependency> 
+		-->
+
+		<!-- Spring Cloud Bus based Custom Events broadcasting demo project dependency -->
+		<dependency>
+			<groupId>com.tirthal.learning</groupId>
+			<artifactId>gs-bus-custom-events</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
