@@ -26,14 +26,14 @@
         <module>gs-bus-custom-events</module>
         <module>gs-bus-hello-service</module>
         <module>gs-bus-bye-service</module>      
-        
+        <module>gs-stream-greetings-service</module>
     </modules>
 	
 	<!-- Keeping spring-boot-starter-parent and spring-cloud-dependencies here to enable version upgrade in all child modules at one go -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.0.RELEASE</version>
+		<version>1.5.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>	
 	
@@ -42,7 +42,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Camden.SR3</version>
+				<version>Dalston.SR1</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
