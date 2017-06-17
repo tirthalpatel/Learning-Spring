@@ -7,7 +7,7 @@ This is plain-vanilla hello microservice to try Spring Cloud Bus features. Also 
 
 ## Pre-requisites
 
-__Dependency__ : RabbitMQ (Alternatively Kafka is also supported by Spring Cloud Bus - just need to switch 'Cloud Bus AMQP' with 'Spring Bus Kafka' dependency in pom.xml file, if need to use Kafka message broker instead of RabbitMQ)
+__Dependency__ : RabbitMQ (Alternatively Kafka is also supported by Spring Cloud Bus - just need to switch 'Cloud Bus AMQP' with 'Cloud Bus Kafka' dependency in pom.xml file, if need to use Kafka message broker instead of RabbitMQ)
 
 * [Parent README.md](../README.md)
 * Start RabbitMQ server 

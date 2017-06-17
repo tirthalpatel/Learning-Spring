@@ -24,8 +24,8 @@ Also refer [Externalized Configuration Pattern](http://microservices.io/patterns
 ### Try
 
 1. `http://localhost:8888/admin/env`
-2. `http://localhost:8888/app/profile` / `http://localhost:8888/gs-config-client/test` / `http://localhost:8888/gs-config-client.properties` ...
-3. `http://localhost:8888/encrypt` / `http://localhost:8888/decrypt`
+2. `http://localhost:8888/app/profile` | `http://localhost:8888/gs-config-client/test` | `http://localhost:8888/gs-config-client.properties` ...
+3. `http://localhost:8888/encrypt` | `http://localhost:8888/decrypt` [using POST method]
 
 ### Spring Cloud Config - Encrypt / Decrypt - Problem and Solution
 

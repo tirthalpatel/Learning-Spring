@@ -33,8 +33,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- Depending on available broker, needs to add one of Spring Cloud Bus 
-			starters -->
+		<!-- Depending on available broker, needs to add one of Spring Cloud Bus starters -->
 		<!-- This depends on RabbitMQ broker -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
