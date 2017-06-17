@@ -4,7 +4,7 @@ With the advent of microservice and cloud-native application architectures, buil
 
 Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems. Many of these patterns are provided via wrapping the battle-tested components found at NetflixOSS.
 
-This is maven based multi-module project structure. The parent project contains various child projects to get started with [Spring Cloud Version: Camden.SR3](http://cloud.spring.io/spring-cloud-static/Camden.SR3/).
+This is maven based multi-module project structure. The parent project contains various child projects to get started with [Spring Cloud Version: Dalston.SR1](http://cloud.spring.io/spring-cloud-static/Dalston.SR1/).
 
 Here, the focus is to experiment various microservices patterns quickly using Spring cloud technology stack with plain-vanilla approach instead of building microservices for complex real-world functional use cases.
 
@@ -86,6 +86,7 @@ __Patterns__ : [Asynchronous Messaging for Inter-service Communication](http://m
 1. `gs-config-server`: This is cloud config server.
 2. `gs-discovery-eureka-server`: This is Eureka server for service registry.
 3. `gs-bus-hello-service` and `gs-bus-bye-service`: Just a plain-vanilla microservice to experiment events broadcasting among nodes via Spring Cloud Bus. 
+4. `gs-stream-greetings-service`: A simple greetings microservice to try Spring Cloud Stream concepts.
 
 ## TODO
 
