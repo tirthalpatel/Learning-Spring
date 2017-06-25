@@ -1,0 +1,16 @@
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+  <logger name="com.tirthal.learning" level="INFO" />
+  <logger name="org.springframework" level="WARN" />
+  <root level="WARN" />
+
+  <root level="WARN"> <!-- Change to INFO to see more logs -->
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>
