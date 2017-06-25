@@ -10,6 +10,10 @@ Numerous projects for getting my hands dirty with Spring IO technology stack.
 
 * [gs-spring-boot](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-boot) - Spring Boot Project Skeleton + POC for getting started with Spring Boot Application.
 
+## Spring Kafka
+
+* [poc-spring-boot-kafka-app](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-kafka/poc-spring-boot-kafka-app) - Sample Kafka client code snippet of sending or receiving String or JSON messages with Kafka topic using Spring Kafka project (Maven based project structure with Spring Boot)
+
 ## Spring Data
 
 * [gs-spring-data-jpa](https://github.com/tirthalpatel/Learning-Spring/tree/master/gs-spring-data/gs-spring-data-jpa) - Sample code snippet for getting hands dirty with standard Spring JPA and Spring Data JPA (Maven based project structure without Spring Boot).
