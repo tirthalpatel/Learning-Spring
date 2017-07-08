@@ -1,6 +1,6 @@
 # Core Spring - learning made easy
 
-Sample code snippet for getting started (gs) with Core Spring.
+Sample code snippet for getting started (gs) with Core Spring. Read related blog post [here](http://tirthalpatel.blogspot.com/2014/11/core-spring-learning-made-easy-by-sample-code-snippet.html).
 
 ## Skip steps of creating new project, instead use this project directly for quick start
 
