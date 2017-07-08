@@ -1,12 +1,12 @@
 # Getting started with Spring Boot Application
 
-Manually created maven based project for POC of Spring Boot (1.5.2.RELEASE version) to try following.
+Manually created maven based project for POC of Spring Boot (1.5.2.RELEASE version) to try following. Read related blog post [here](http://tirthalpatel.blogspot.com/2017/07/spring-boot-learning-made-easy-by-simple-application.html).
 
 * Spring Boot + Spring Web (MVC and REST) + Thymeleaf (Template engine)
-* Spring Boot + Swagger UI
+* Spring Boot + Swagger UI (easily visualize and interact with the API’s resources)
 * Spring Boot + Properties customization
-* Spring Boot + Spring Data JPA + H2 Database + FlywayDB
-* Spring Boot + Spring Data REST + HAL browser
+* Spring Boot + Spring Data JPA + H2 Database + FlywayDB (deal with RDBMS)
+* Spring Boot + Spring Data REST + HAL browser (easy to build hypermedia-driven REST web services)
 * Spring Boot + Spring Data Redis (publish and subscribe to messages sent via Redis) 
 * Spring Boot + Production-ready features of Spring Boot Actuator
 * Spring Boot + Hawtio (a lightweight web console to monitor and manage application)
@@ -33,7 +33,7 @@ Manually created maven based project for POC of Spring Boot (1.5.2.RELEASE versi
 
 When application is deployed and started successfully, you should see these messages in the log: `Tomcat started on port(s): 8080 (http)... Started App in x seconds...`
 
-### Option 1: Manually
+### Option 1: Using Maven on local machine
 
 * Run Redis server locally: `redis-server`
 * Run "App.java" as java application in STS / Run `mvn spring-boot:run -DREDIS_HOST=127.0.0.1 -DREDIS_PORT=6379` maven command on command prompt
@@ -122,7 +122,7 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 
 * Awesome, Spring Boot based basic project structure is created manually.  
 
-### Spring Boot + Swagger UI
+### Spring Boot + Swagger UI (easily visualize and interact with the API’s resources)
 
 * Open pom.xml and add Swagger dependencies: 
 
@@ -151,7 +151,7 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 	* STS - Run Configurations - Java Application - App - Add VM Arguments : "-Dspring.profiles.active=prod". For example, production configuration not showing default Spring banner on application startup.	
 	* Alternatively, run "mvn spring-boot:run -Dspring.profiles.active=prod" maven command on command prompt. 
 
-### Spring Boot + Spring Data JPA + H2 Database + FlywayDB 
+### Spring Boot + Spring Data JPA + H2 Database + FlywayDB (deal with RDBMS)
 
 * For enabling database migration, Liquibase is also supported by Spring Boot as an alternative of FlywayDB.
 
@@ -184,7 +184,7 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 
 * Done with fundamental end-to-end flow (layered architecture), from UI to Controller to Service to Repository to DB.
 
-### Spring Boot + Spring Data REST + HAL browser
+### Spring Boot + Spring Data REST + HAL browser (easy to build hypermedia-driven REST web services)
 
 * For easily building hypermedia-driven REST web services on top of Spring Data repositories
 
