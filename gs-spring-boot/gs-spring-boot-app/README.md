@@ -309,3 +309,5 @@ Easiest approach to create Spring Boot project skeleton could be using Spring In
 * How to run test cases?
 	- STS: select project or junit package or test class, right click and run as "JUnit tests" / "Maven test" by passing "-Dspring.profiles.active=test" in VM arguments		
 	- Alternatively, run maven command from root of project: "mvn test -Dspring.profiles.active=test"
+
+* Also see [Spring Tips: Bootiful Testing](https://www.youtube.com/watch?v=lTSJCr7xdbM)
