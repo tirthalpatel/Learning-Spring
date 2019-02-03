@@ -21,7 +21,7 @@ A Spring Boot application can take immediate advantage of the Spring Config Serv
 ### Try
 
 1. Override default configured port by passing argument: `-DPORT=7004`
-2. Bootstrap and Application Context Hierarchy (see 'message' property and its priority order is - from 'gs-config-client.properties' to 'application.properties of config repo' 'application.properties of client app' to 'bootstrap.properties': `http://localhost:7001/admin/env` 
+2. Bootstrap and Application Context Hierarchy (see 'message' property and its priority order is - from 'gs-config-client.properties' to 'application.properties of config repo' to 'application.properties of client app' to 'bootstrap.properties': `http://localhost:7001/admin/env` 
 3. Change 'message' property values to understand priority order of configuration files (as mentioned in previous point): `http://localhost:7001/message`	
 4. Don't restart server after each changes in external config repo. Rather, thanks to @RefreshScope which refreshes values, if POST to /refresh endpoint: `http://localhost:7001/admin/refresh`
 5. Config server's encrypt / decrypt feature - Refer 'secret.password' in 'gs-config-client.properties': `http://localhost:7001/admin/env` and `http://localhost:7001/password` shows usage of `{cipher}`

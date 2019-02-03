@@ -2,7 +2,7 @@
 
 This is zipkin server for visualizing and querying traces, which are received over HTTP from `gs-games-*` microservices (enabled for automatic instrumentation of traces using Spring Cloud Sleuth).
 
-Zipkin is a distributed tracing system. It helps gather timing data needed to troubleshoot latency problems in microservice architectures. It manages both the collection and lookup of this data. Zipkin’s design is based on the Google Dapper paper.
+[Zipkin](https://github.com/openzipkin/zipkin) is a distributed tracing system. It helps gather timing data needed to troubleshoot latency problems in microservice architectures. It manages both the collection and lookup of this data. Zipkin’s design is based on the Google Dapper paper. This project includes a dependency-free library and a spring-boot server. Storage options include in-memory, JDBC (mysql), Cassandra, and Elasticsearch. See [Zipkin Quickstart](https://zipkin.io/pages/quickstart.html). 
 
 Spring Cloud Sleuth implements a distributed tracing solution for Spring Cloud. It also borrows Dapper’s terminology. 
 
@@ -32,9 +32,7 @@ Refer [Distributed Tracking Pattern](http://microservices.io/patterns/observabil
 ## Key Notes
 
 (1) Enabled `gs-games-*` microservice projects for automatic instrumentation using Sleuth and sending traces to Zipkin server over HTTP: see added dependencies in `gs-games-detail-rxjava-gateway\pom.xml` and configuration in `gs-config-repo\gs-games-detail-rxjava-gateway.properties`
-(2) Created `gs-zipkin-server` project using SPRING INITIALIZR. Selected 'Zipkin UI' and 'Zipkin Server' dependencies. Added `@EnableZipkinServer` annotation in 'GsZipkinServerApplication.java'. Added 'bootstrap.properties' in project resources to locate config server.
-(3) Added property file in 'gs-config-repo' folder: 'gs-zipkin-server.properties'.
-(4) Started the zipkin server and status could be validated using `http://localhost:9411/` url.
+(2) Started the zipkin server with java (e.g. `java -jar lib/zipkin-server-2.12.0-exec.jar`) and status could be validated using `http://localhost:9411/` url
 
 ### Try
 

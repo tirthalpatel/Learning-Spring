@@ -4,11 +4,13 @@ With the advent of microservice and cloud-native application architectures, buil
 
 Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems. Many of these patterns are provided via wrapping the battle-tested components found at NetflixOSS.
 
-This is maven based multi-module project structure. The parent project contains various child projects to get started with [Spring Cloud Version: Dalston.SR1](http://cloud.spring.io/spring-cloud-static/Dalston.SR1/).
+This is maven based multi-module project structure. The parent project contains various child projects to get started with [Spring Cloud Version: Greenwich.RELEASE](http://cloud.spring.io/spring-cloud-static/Greenwich.RELEASE/).
 
 Here, the focus is to experiment various microservices patterns quickly using Spring cloud technology stack with plain-vanilla approach instead of building microservices for complex real-world functional use cases.
 
 ## Key Learning Goals
+
+Spring Cloud Upgrade from Dalston.SR1 to Greenwich.RELEASE @ [see](https://github.com/tirthalpatel/Learning-Spring/blob/master/gs-spring-cloud/gs-microservices/upgrade-notes.md)
 
 * __Centralized External Configuration backed by a Git Repository__ --- Spring Cloud Config
 * __Service Registry and Client Side Load Balanced Discovery__ --- Spring Cloud Netflix Eureka + Ribbon-Enabled RestTemplate with Eureka
@@ -26,7 +28,7 @@ Here, the focus is to experiment various microservices patterns quickly using Sp
 
 - Java 1.8+
 - Maven
-- Spring STS IDE
+- Spring STS 3.9.6.RELEASE+ (or choice of IDE)
 
 ## How to run demo?
 

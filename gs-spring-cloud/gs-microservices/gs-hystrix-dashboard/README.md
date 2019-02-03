@@ -7,6 +7,8 @@ Looking at an individual instances Hystrix data is not very useful in terms of t
 * Pulling the configuration information from Spring Cloud Config Server and automatically registered with Eureka server.
 * Hystrix Dashboard with Turbine 
 
+In some environments (such as in a PaaS setting), the classic Turbine model of pulling metrics from all the distributed Hystrix commands does not work. In that case, you might want to have your Hystrix commands push metrics to Turbine. Spring Cloud enables that with messaging. To do so on the client, add a dependency to spring-cloud-netflix-hystrix-stream and the spring-cloud-starter-stream-* of your choice. 
+
 ## Pre-requisites
 
 * [Parent README.md](../README.md)

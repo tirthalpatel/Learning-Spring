@@ -1,7 +1,6 @@
 package com.tirthal.learning.bus;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.cloud.bus.endpoint.BusEndpoint;
 import org.springframework.cloud.bus.jackson.RemoteApplicationEventScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -25,8 +24,8 @@ public class SpringCloudBusConfiguration {
 	}
 
 	@Bean
-	@ConditionalOnProperty(value = "endpoints.com.tirthal.learning.bus.print.datetime.enabled", matchIfMissing = true)
-	public PrintDateTimeEndpoint printDateTimeBusEndpoint(ApplicationContext context, BusEndpoint busEndpoint) {
-		return new PrintDateTimeEndpoint(context, context.getId(), busEndpoint);
+	@ConditionalOnProperty(value = "management.endpoint.com.tirthal.learning.bus.print.datetime.enabled", matchIfMissing = true)
+	public PrintDateTimeEndpoint printDateTimeBusEndpoint(ApplicationContext context) {
+		return new PrintDateTimeEndpoint(context, context.getId());
 	}
 }

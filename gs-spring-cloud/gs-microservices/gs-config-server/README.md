@@ -9,7 +9,7 @@ Also refer [Externalized Configuration Pattern](http://microservices.io/patterns
 ## Pre-requisites
 
 * [Parent README.md](../README.md)
-* Ensure to configure `spring.cloud.config.server.git.uri` correctly in `src/main/resources/application.properties`
+* Ensure to configure `spring.cloud.config.server.git.uri` and `spring.cloud.config.server.git.basedir` correctly in `src/main/resources/bootstrap.properties`
 * [Install Java Cryptography Extension](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_encryption_and_decryption) to use Encryption and Decryption features
 
 ## Key Notes

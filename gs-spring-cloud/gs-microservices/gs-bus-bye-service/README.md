@@ -2,9 +2,6 @@
 
 This is plain-vanilla bye microservice to try Spring Cloud Bus features. Also see [gs-bus-custom-events](../gs-bus-custom-events/README.md).
 
-* Pulling the configuration information from Spring Cloud Config Server
-* Registering to Spring Cloud Netflix Eureka Server for Service Discovery
-
 ## Pre-requisites
 
 * [Parent README.md](../README.md)

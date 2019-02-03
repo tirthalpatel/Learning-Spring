@@ -20,4 +20,4 @@ Refer [Service Registry Pattern](http://microservices.io/patterns/service-regist
 ### Try
 
 1. Start eureka in standalone mode: `http://localhost:8761/admin/registry`
-2. Start two eureka instances, one with 'peer1' profile and another with 'peer2' profile: `http://localhost:8761/admin/registry` / `http://localhost:8762/admin/registry`
+2. Start two eureka instances, one with 'peer1' profile (i.e. using `-Dspring.profiles.active=peer1` in VM Arguments) and another with 'peer2' profile (i.e. using `-Dspring.profiles.active=peer2` in VM Arguments): `http://localhost:8761/admin/registry` / `http://localhost:8762/admin/registry`

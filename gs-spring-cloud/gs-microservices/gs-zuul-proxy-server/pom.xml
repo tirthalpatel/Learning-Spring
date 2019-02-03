@@ -11,7 +11,7 @@
 	<artifactId>gs-zuul-proxy-server</artifactId>	
 	<packaging>jar</packaging>
 	<name>gs-zuul-proxy-server</name>
-	<description>Demo project for using Zuul as a JVM based router and server side load balancer </description>
+	<description>Demo project for using Zuul as a JVM based router and server side load balancer</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,11 +26,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zuul</artifactId>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
 
 		<dependency>
